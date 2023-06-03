@@ -16,3 +16,31 @@ img {
   display: block;
   max-width: 100%;
 }
+
+#datetime-picker {
+  font-size: 25px;
+  height: 40px;
+}
+.btnTimeChahge {
+  height: 40px;
+  font-size: 25px;
+}
+
+.container {
+  text-align: center;
+  max-width: 720px;
+  margin: 100px auto;
+}
+
+.timer {
+  margin: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.value {
+  display: block;
+  font-size: 40px;
+  font-weight: 700;
+}
