@@ -8,6 +8,8 @@ const fieldMin =document.querySelector('[data-minutes]');
 const fieldSec =document.querySelector('[data-seconds]');
 const fieldDay =document.querySelector('[data-days]');
 
+startBtn.disabled = true;
+
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -31,15 +33,21 @@ flatpickr(inputDate, options)
 
 startBtn.addEventListener('click', ()=> {
   startBtn.disabled = true;
+  inputDate.disabled = true;
+  
       const  inputPlace = inputDate.value;
       const selectedDate = new Date(inputPlace).valueOf();
-      
+
       const interval = setInterval(()=> {
         const currentDate = Date.now();
         let timeExist = selectedDate-currentDate;
+
         if (currentDate > selectedDate) {
           clearInterval(interval);
           timeExist = 0;
+        }
+        if (timeExist ===0) {
+          inputDate.disabled = false;
         }
         const {days, hours, minutes, seconds} = convertMs(timeExist);
         fieldDay.textContent = addLeadingZero(days);
@@ -47,6 +55,8 @@ startBtn.addEventListener('click', ()=> {
         fieldSec.textContent = addLeadingZero(seconds);
         fieldsHour.textContent = addLeadingZero(hours);
     }, 1000)
+
+   
 })
  
 function addLeadingZero (value) {

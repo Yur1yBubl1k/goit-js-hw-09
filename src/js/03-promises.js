@@ -40,5 +40,6 @@ function formSubmit(evt) {
     currentDelay+= step;
   }
 };
-  
+
 formField.addEventListener('submit', formSubmit)
+
