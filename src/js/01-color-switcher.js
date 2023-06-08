@@ -22,3 +22,5 @@ const stopColorFunc = () => {
  
 btnStart.addEventListener('click', changeColorFunc); 
 btnStop.addEventListener('click',stopColorFunc);
+
+
